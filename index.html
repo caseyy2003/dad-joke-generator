@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dad Joke Generator</title>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="resources/css/index.css">
+</head>
+<body>
+  <h1>Dad Joke Generator</h1>
+  <p id="joke"></p>
+  <button onclick="showJoke()">Show Joke</button>
+
+  <script>
+    const jokes = [
+      "Did you hear about the restaurant on the moon? Great food, no atmosphere.",
+      "Why did the scarecrow win an award? Because he was outstanding in his field.",
+      "How do you organize a space party? You planet.",
+      "Why did the math book look sad? Because it had too many problems.",
+      "I adopted a dog from a blacksmith. As soon as I brought him home, he made a bolt for the door.",
+      "How much does it cost to swim with sharks? An arm and a leg.",
+      "What kind of felines can bowl? Alley cats.",
+      "How do you make a robot angry? Keep pushing his buttons.",
+      "I told a bad chemistry joke once. I got no reaction.",
+      "When's the best time to call your dentist? Tooth-hurty.",
+      "How did the piano get locked out of its car? It lost its keys.",
+      "I've never been a fan of facial hair. But now it's starting to grow on me.",
+      "Did you hear about the fire at the shoe factory? Unfortunately, many soles were lost.",
+      "Want to hear a construction joke? I’m still working on it.",
+      "Did you hear about the nurse who didn't want to become a doctor? She didn't have the patients.",
+      "Why did the tourist feel disappointed upon seeing the Liberty Bell? It wasn't all it was cracked up to be.",
+      "What do rabbits need after getting caught in the rain? A hare dryer.",
+      "Why did the coach put the frog in the outfield? He's really good at catching flies.",
+      "What's the best kind of music to listen to when fishing? Something catchy"
+      // Add more jokes as needed
+    ];
+
+    function generateJoke() {
+      const randomIndex = Math.floor(Math.random() * jokes.length);
+      return jokes[randomIndex];
+    }
+
+    function showJoke() {
+      const jokeElement = document.getElementById("joke");
+      jokeElement.textContent = generateJoke();
+    }
+  </script>
+</body>
+</html>
