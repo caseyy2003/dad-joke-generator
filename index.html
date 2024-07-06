@@ -9,8 +9,18 @@
 </head>
 <body>
   <h1>Dad Joke Generator</h1>
-  <p id="joke"></p>
-  <button onclick="showJoke()">Show Joke</button>
+  <div id="joke-container">
+    <p id="joke"></p>
+    <img id="leo-laughing" src="resources/images/leo_laughing.jpg" alt="Laughing Leo" style="display:none;">
+    <img id="random-dad-laughing" src="resources/images/ramdom_dad_laughing.jpeg" alt="Random Dad Laughing" style="display:none;">
+    <img id="carlton-laughing" src="resources/images/Carlton_laughing.jpg" alt="Carlton Laughing" style="display:none;">
+    <img id="jc1" src="resources/images/JC1.jpeg" alt="JC Laughing" style="display:none;">
+    <img id="jc2" src="resources/images/JC2.jpg" alt="JC Laughing" style="display:none;">
+    <img id="randy-laughing" src="resources/images/randy_southpark_laughing.jpeg" alt="Randy Southpark Laughing" style="display:none;">
+  </div>
+  <button onclick="showJoke()">Make Me Laugh!</button>
+  <br>
+  <button id="subscribe-button">Get Daily Dad Jokes in Your Inbox – Click Here!</button>
 
   <script>
     const jokes = [
@@ -36,6 +46,15 @@
       // Add more jokes as needed
     ];
 
+    const images = [
+      "leo-laughing",
+      "random-dad-laughing",
+      "carlton-laughing",
+      "jc1",
+      "jc2",
+      "randy-laughing"
+    ];
+
     function generateJoke() {
       const randomIndex = Math.floor(Math.random() * jokes.length);
       return jokes[randomIndex];
@@ -44,6 +63,15 @@
     function showJoke() {
       const jokeElement = document.getElementById("joke");
       jokeElement.textContent = generateJoke();
+
+      // Hide all images
+      images.forEach(imgId => {
+        document.getElementById(imgId).style.display = "none";
+      });
+
+      // Show a random image
+      const randomImg = images[Math.floor(Math.random() * images.length)];
+      document.getElementById(randomImg).style.display = "inline";
     }
   </script>
 </body>
